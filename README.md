@@ -38,7 +38,7 @@ Add following lines
 	 git clone
 
   
-  ### <u>Activity1: Controlling turtle in TurtleSim</u
+  ### <u>Activity1: Controlling turtle in TurtleSim</u>
  In this activity we will use turtlesim simulator and another node that will  control 
   - Launch the turtlesim node
 		  
@@ -81,8 +81,8 @@ By experience we know that twist is part of geometry_msg.
 
 Now that we know about the topic responsible for controling the turtle and the format in which we need to supply data. Lets publish data on the node using command line.
 
-- Publish data using Command line.
+- Publish data using Command line
 
-The command below publishes linear and angular data on the cmd_vel topic
-	
 	ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 4.0, y: 0.0,z: 0.0}, angular:{x: 0.0, y: 0.0, z: 1.0}}"
+
+### <u>Activity3: Controlling turtle in TurtleSim using python node
