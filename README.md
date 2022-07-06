@@ -83,7 +83,7 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 - Publish data using Command line
 
-	ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 4.0, y: 0.0,z: 0.0}, angular:{x: 0.0, y: 0.0, z: 1.0}}"
+		ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 4.0, y: 0.0,z: 0.0}, angular:{x: 0.0, y: 0.0, z: 1.0}}"
 
 ### <u>Activity3: Controlling turtle in TurtleSim using python node
 
