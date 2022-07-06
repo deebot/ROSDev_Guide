@@ -86,3 +86,35 @@ Now that we know about the topic responsible for controling the turtle and the f
 	ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 4.0, y: 0.0,z: 0.0}, angular:{x: 0.0, y: 0.0, z: 1.0}}"
 
 ### <u>Activity3: Controlling turtle in TurtleSim using python node
+
+- Build Package
+
+	ros2 pkg create turtlecontrol --build-type ament-python --dependencies rclpy
+
+- Create file for node source code and write code.
+
+	touch twistControl.py
+
+- Make code executable if you want to run node directly from the python file
+
+	chmod +x twistControl.py
+
+- Run node 
+
+	./twistControl.py
+
+- Create an Executable.
+
+In the setup.pkg file. Add following
+
+	"turtle_twist = turtlecontrol.twistControl:main"
+
+- Build the executable
+
+	colcon build --packages-select turtlecontrol
+
+The executable will be called "turtle_twist". The location of installation is mentioned in setup.cfg.
+
+- Run the executable
+
+	ros2 run turtlecontrol turtle_twist.
