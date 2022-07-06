@@ -65,21 +65,21 @@ The turtlesim_node can also be controlled by nodes written in python. In order t
 		ros2 topic info <Topic name>
 		ros2 topic info /turtle1/cmd_vel
 
-![Diagram](images/act2.png)
+	![Diagram](images/act2.png)
 
 The topic which is associated with the movement of turtle in turtle sim is  cmd_vel. As can be seen in the picture above the Type of this topics is Twist. In order to understand the  data composition of Twist type. We investigate further.
 
 
 - Investigate the composition of Twist.
 
-By experience we know that twist is part of geometry_msg. 
+  By experience we know that twist is part of geometry_msg. 
 
-	ros2 interface show  geometry_msgs/msg/Twist
-	ros2 interface proto  geometry_msgs/msg/Twist
+		ros2 interface show  geometry_msgs/msg/Twist
+		ros2 interface proto  geometry_msgs/msg/Twist
 
-![Diagram](images/interface.png)
+	![Diagram](images/interface.png)
 
-Now that we know about the topic responsible for controling the turtle and the format in which we need to supply data. Lets publish data on the node using command line.
+  Now that we know about the topic responsible for controling the turtle and the format in which we need   to supply data. Lets publish data on the node using command line.
 
 - Publish data using Command line
 
@@ -90,31 +90,36 @@ Now that we know about the topic responsible for controling the turtle and the f
 - Build Package
 
 	ros2 pkg create turtlecontrol --build-type ament-python --dependencies rclpy
+	
 
 - Create file for node source code and write code.
 
-	touch twistControl.py
+		touch twistControl.py
 
 - Make code executable if you want to run node directly from the python file
 
-	chmod +x twistControl.py
+		chmod +x twistControl.py
 
 - Run node 
 
-	./twistControl.py
+		./twistControl.py
 
 - Create an Executable.
 
-In the setup.pkg file. Add following
+  In the setup.pkg file. Add following
 
-	"turtle_twist = turtlecontrol.twistControl:main"
+		"turtle_twist = turtlecontrol.twistControl:main"
+	
 
 - Build the executable
 
-	colcon build --packages-select turtlecontrol
 
-The executable will be called "turtle_twist". The location of installation is mentioned in setup.cfg.
+		colcon build --packages-select turtlecontrol
+	
+
+  The executable will be called "turtle_twist". The location of installation is mentioned in setup.cfg.
 
 - Run the executable
 
-	ros2 run turtlecontrol turtle_twist.
+	
+		ros2 run turtlecontrol turtle_twist.
