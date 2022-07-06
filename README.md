@@ -69,8 +69,6 @@ The turtlesim_node can also be controlled by nodes written in python. In order t
 
 The topic which is associated with the movement of turtle in turtle sim is  cmd_vel. As can be seen in the picture above the Type of this topics is Twist. In order to understand the  data composition of Twist type. We investigate further.
 
-![Diagram](images/interface.png)
-
 
 - Investigate the composition of Twist.
 
@@ -78,3 +76,11 @@ By experience we know that twist is part of geometry_msg.
 
 	ros2 interface show  geometry_msgs/msg/Twist
 	ros2 interface proto  geometry_msgs/msg/Twist
+
+![Diagram](images/interface.png)
+
+Now that we know about the topic responsible for controling the turtle and the format in which we need to supply data. Lets publish data on the node using command line.
+
+- Publish data using Command line
+
+	ros2 topic pub /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 4.0, y: 0.0,z: 0.0}, angular:{x: 0.0, y: 0.0, z: 1.0}}"
