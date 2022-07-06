@@ -50,9 +50,9 @@ Add following lines
   
  Keep the terminal in forground where the turtle_teleop_key node is running. You will be able to move the turtle.
 
-### <u>Activity2: Controlling turtle in TurtleSim using  Python Publisher</u>
+### <u>Activity2: Controlling turtle in TurtleSim using  static command line publisher
 
-The turtlesim_node can also be controlled by nodes written in python. In order to write it. We need to know the  understand which topic is responsible for messages related to movement of turtle.
+The turtlesim_node can also be controlled by nodes written in python. In order to write it. We need to know the  understand which topic is responsible for messages related to movement of turtle and the format in which it takes the data.
 
 - List available nodes
 		
@@ -69,4 +69,12 @@ The turtlesim_node can also be controlled by nodes written in python. In order t
 
 The topic which is associated with the movement of turtle in turtle sim is  cmd_vel. As can be seen in the picture above the Type of this topics is Twist. In order to understand the  data composition of Twist type. We investigate further.
 
-- Investigate the  composition of Twist
+![Diagram](images/interface.png)
+
+
+- Investigate the composition of Twist.
+
+By experience we know that twist is part of geometry_msg. 
+
+	ros2 interface show  geometry_msgs/msg/Twist
+	ros2 interface proto  geometry_msgs/msg/Twist
