@@ -1,3 +1,4 @@
+
 # ROSDev_Guide
 
 This repository contains code and instructions to build understanding of ROS2 fundamentals.
@@ -101,20 +102,29 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 		chmod +x twistControl.py
 
 - Run node 
+  You can run the node directly from the python file or you can create a executable. To run the node directly do
 
 		./twistControl.py
 
 - Create an Executable.
+  If you want to have a executable that you can run from anywhere using ros2 run <package name>< executable name>
 
   In the setup.pkg file. Add following
 
 		"turtle_twist = turtlecontrol.twistControl:main"
-	
+  turtle_twist will be the name of the executable.
 
 - Build the executable
 
 
 		colcon build --packages-select turtlecontrol
+
+  or
+
+		colcon build --packages-select turtlecontrol --symlink-install
+
+  This command saves us the hassle of building again when we make change to our python code for the node.
+
 	
 
   The executable will be called "turtle_twist". The location of installation is mentioned in setup.cfg.
@@ -123,3 +133,18 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 	
 		ros2 run turtlecontrol turtle_twist.
+
+### <u>Activity 4  : Checking the Frequency
+
+		ros2 topic hz <topic name>
+		ros2 topic hz /turtle1_cmd_vel
+
+### <u>Activity 5 : Checking the Bandwidth
+
+		ros2 topic bw <topic name>
+		ros2 topic bw /turtle1/cmd_vel
+
+### <u>Activity 6: Run a new instance of a node
+
+	ros2 run <package name><executablename> --rps-args --remap __node:=<newexecutablename>
+		
