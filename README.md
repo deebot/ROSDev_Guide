@@ -168,13 +168,12 @@ If you donot use the -t argument you can get the type of the service using
 	ros2 service type <name of service>
 	ros2 service type /spawn
 	
-	![Diagram](images/type.png)
 	
 ### <u>Activity3: Get the composition of a particular type
 
 	ros2 interface show turtlesim/srv/Spawn
 	
-	![Diagram](images/compo.png)
+![Diagram](images/compo.png)
 	
 	
 	
