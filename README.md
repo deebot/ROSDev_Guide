@@ -38,6 +38,7 @@ Add following lines
 
 	 git clone
 
+  ## <u>Topics: Understanding how to deal with Topics
   
   ### <u>Activity1: Controlling turtle in TurtleSim</u>
  In this activity we will use turtlesim simulator and another node that will  control 
@@ -148,3 +149,38 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 	ros2 run <package name><executablename> --rps-args --remap __node:=<newexecutablename>
 		
+
+## <u>Services: Understanding Services
+
+A service is a request/response pattern where a client makes a request to a node providing the service and the service processes the request and generates a response. You generally don’t want to use a service for continuous calls; topics or even actions would be better suited.
+
+### <u>Activity 1: List Services
+
+	ros2 list service list
+	
+	ros2 list service list -t   (Also tells the type)
+	
+![Diagram](images/list.png)
+
+### <u>Activity2: Get the type
+If you donot use the -t argument you can get the type of the service using
+	
+	ros2 service type <name of service>
+	ros2 service type /spawn
+	
+	![Diagram](images/type.png)
+	
+### <u>Activity3: Get the composition of a particular type
+
+	ros2 interface show turtlesim/srv/Spawn
+	
+	![Diagram](images/compo.png)
+	
+	
+	
+	
+	
+
+
+	
+
