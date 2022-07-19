@@ -178,15 +178,21 @@ If you donot use the -t argument you can get the type of the service using
 ![Diagram](images/compo.png)
 	
 
-### <u>Activity3: Call the service
+### <u>Activity4: Call the service
 
 	ros2 service call <service_name> <service_type> <arguments>
 	ros2 service call /spawn turtlesim/srv/Spawn "{x: 4, y: 5, theta: 0.5, name: ''}"
 
-	
-	
-	
-
 
 	
+## <u>Remapping
+The same node without any change in the code can be run with a different name or in other words a new instance of same node can be started
+This may be required to change the topic names on which they are publishing or subscribing. Also keep in mind always change the name of node when creating a new node otherwise if there are two nodes with same name it can cause unintended behaviour.
+
+We just spawn a new turtle in previous section. This new turtle can be controlled by sending command on /turtle2/cmd_vel. But our turtle_teleop_key node by default publishes on /turtle1/cmd_vel. So we start a new instance on /teleop_turtle node whose name will be /telop_turtle_new and will publish on /turtle2/cmd_vel
+
+	ros2 run turtlesim turtle_teleop_key --ros-args --remap /turtle1/cmd_vel:=/turtle2/cmd_vel --remap __node:=teleop_turtle_new
+
+	
+
 
