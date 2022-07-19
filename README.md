@@ -173,9 +173,16 @@ If you donot use the -t argument you can get the type of the service using
 
 	ros2 interface show turtlesim/srv/Spawn
 	
+	ros2 interfac proto turtlesim/srv/Spawn
+	
 ![Diagram](images/compo.png)
 	
-	
+
+### <u>Activity3: Call the service
+
+	ros2 service call <service_name> <service_type> <arguments>
+	ros2 service call /spawn turtlesim/srv/Spawn "{x: 4, y: 5, theta: 0.5, name: ''}"
+
 	
 	
 	
