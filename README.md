@@ -195,4 +195,28 @@ We just spawn a new turtle in previous section. This new turtle can be controlle
 
 	
 
+## <u>Interfaces
+In order for two nodes to commmunicate with each other they should agree on 
+- Topic Name(ex:/number_count , /turtle1/cmd_vel)
+- Msg Defination (example_interfaces/msg/Int64  ,  geometry_msgs/msg/Twist)
+Similarly for Services
+- Name of Service (ex: /reset_number_counter ,  /spawn , /pen)
+- Msg Definition: There are usually 2 parts to it one is structure of request and otherone below the dotted line is response
 
+| /rest         | /spawn        | /set_pen    |
+| ------------- |:-------------:| -----------:|
+| bool data     | float32 x     | uint8 r     |
+|               | float32 x     | uint8 g     |
+|               | float32 theta | uint8 b     |
+|               |               | uint8 width |
+|               |               | uint8 off   |
+|               |               |             |
+|               |               |             |
+| ------------- | ------------- | ----------- |
+| bool success  | string name   |             |
+ 		
+				
+		
+
+
+  
