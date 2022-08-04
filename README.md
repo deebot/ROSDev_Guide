@@ -89,7 +89,7 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 ### <u>Activity3: Controlling turtle in TurtleSim using python node
 
-- Build Package
+- Create Package
 
 	ros2 pkg create turtlecontrol --build-type ament-python --dependencies rclpy
 	
@@ -134,6 +134,22 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 	
 		ros2 run turtlecontrol turtle_twist.
+
+
+### <u>Activity3: Controlling turtle in TurtleSim using C++ node
+ 
+ - Create Package
+
+		ros2 pkg create turtleControlCpp --build-type ament_cmake --dependencies rclcpp
+		
+- Create file for node source code and write code.
+
+		touch twistControl.cpp
+		
+	
+
+
+
 
 ### <u>Activity 4  : Checking the Frequency
 
