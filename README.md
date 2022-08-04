@@ -142,11 +142,13 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 		ros2 pkg create turtlecontrolcpp --build-type ament_cmake --dependencies rclcpp
 		
-- Create file for node source code and write code.
+- Create file for node source code and add code
 
 		touch twistControl.cpp
 		
-- Create file for 
+- Execute the node
+	
+		ro2 run turtlecontrolcpp twistCPP
 		
 	
 
