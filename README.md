@@ -236,7 +236,33 @@ Similarly for Services
 | ------------- | ------------- | ----------- |
 | bool success  | string name   |             |
  		
-				
+### Activity: A custom Interface creation
+
+- Create a package. By default creates a C package
+
+	ros2 pkg create rex_interfaces
+	
+### Remove the unwanted folders
+
+	rm -rf includes 
+	rm -rf src
+	mkdir msg
+
+### Edit packages.xml
+
+	<build_depend> rosidl_default_generators</build_depend>
+	<exec_depend>rosidl_default_runtime<exec_depend>
+	<member_of_group>rosidl_interface_packages</member_of_group>
+
+### Edit cmakeLiss.txt
+	
+	find_package(
+		rosidl_default_generators REQUIRED)
+	rosidl_generate_interfaces(${PROJECT_NAME}
+ 	"msg/RobotData.msg"
+	)
+	
+	
 		
 
 
