@@ -31,6 +31,4 @@ rosidl_generate_interfaces(${PROJECT_NAME}
  
 ament_package()
 
-## Location of generated Code
 
-    ~/ros2_ws/rex_interfaces/lib/python3.8/site-packages/rex_interfaces/msg
