@@ -140,11 +140,15 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
  
  - Create Package
 
-		ros2 pkg create turtleControlCpp --build-type ament_cmake --dependencies rclcpp
+		ros2 pkg create turtlecontrolcpp --build-type ament_cmake --dependencies rclcpp
 		
-- Create file for node source code and write code.
+- Create file for node source code and add code
 
 		touch twistControl.cpp
+		
+- Execute the node
+	
+		ro2 run turtlecontrolcpp twistCPP
 		
 	
 
@@ -232,8 +236,48 @@ Similarly for Services
 | ------------- | ------------- | ----------- |
 | bool success  | string name   |             |
  		
-				
+### Activity: A custom Interface creation
+
+- Create a package. By default creates a C package
+
+	ros2 pkg create rex_interfaces
+	
+### Remove the unwanted folders
+
+	rm -rf includes 
+	rm -rf src
+	mkdir msg
+
+### Edit packages.xml
+
+	<build_depend> rosidl_default_generators</build_depend>
+	<exec_depend>rosidl_default_runtime<exec_depend>
+	<member_of_group>rosidl_interface_packages</member_of_group>
+
+### Edit cmakeLiss.txt
+	
+	find_package(
+		rosidl_default_generators REQUIRED)
+	rosidl_generate_interfaces(${PROJECT_NAME}
+ 	"msg/RobotData.msg"
+	)
+	
+	
 		
+### Transfroms
+
+- Download packages
+		
+		sudo apt-get install ros-foxy-turtle-tf2-py ros-foxy-tf2-tools ros-foxy-tf-transformations
+	
+- Another package for euler angles
+
+		pip3 install transforms3d
+	
+- Launch
+
+		ros2 launch turtle_tf2_py turtle_tf2_demo.launch.py
+	
 
 
   
