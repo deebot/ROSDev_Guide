@@ -268,15 +268,15 @@ Similarly for Services
 
 - Download packages
 		
-	sudo apt-get install ros-foxy-turtle-tf2-py ros-foxy-tf2-tools ros-foxy-tf-transformations
+		sudo apt-get install ros-foxy-turtle-tf2-py ros-foxy-tf2-tools ros-foxy-tf-transformations
 	
 - Another package for euler angles
 
-	pip3 install transforms3d
+		pip3 install transforms3d
 	
 - Launch
 
-	ros2 launch turtle_tf2_py turtle_tf2_demo.launch.py
+		ros2 launch turtle_tf2_py turtle_tf2_demo.launch.py
 	
 
 
