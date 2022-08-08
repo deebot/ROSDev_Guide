@@ -283,7 +283,9 @@ Similarly for Services
   ### Control Robot in Gazebo
   
   - Packages
-  	sudo apt-get install ros-foxy-teleop-twist-keyboard
+  		
+		sudo apt-get install ros-foxy-teleop-twist-keyboard
+		
   - Run the package
   
-  	ros2 run teleop_twist_keyboard teleop_twist_keyboard
+  		ros2 run teleop_twist_keyboard teleop_twist_keyboard
