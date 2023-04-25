@@ -124,7 +124,8 @@ The topic which is associated with the movement of turtle in turtle sim is  cmd_
 
 		colcon build --packages-select turtlecontrol --symlink-install
 
-  This command saves us the hassle of building again when we make change to our python code for the node.
+  This command saves us the hassle of building again when we make change to our python code for the node. But for this to work it is necessary to have twistControl.py
+  should be make executable using chmod +x twistControl.py
 
 	
 
